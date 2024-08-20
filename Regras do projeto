@@ -1,0 +1,18 @@
+Funcionário:
+    cpf;
+    nome;
+    telefone (whats);
+    email;
+
+Equipamento:
+    código;
+    descrição;
+    estado(novo, usado, defeito, baixado);
+    situação(disponivel, manutenção, emprestado);
+    responsável;
+    data e hora (se emprestado);
+
+Ações:
+    Cadastrar funcionários e equipamentos;
+    Emprestar e Devolver Equipamento;
+    Listar Equipamentos(Situação e responsável);
