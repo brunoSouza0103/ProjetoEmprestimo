@@ -14,5 +14,21 @@ Equipamento:
 
 Ações:
     Cadastrar funcionários e equipamentos;
-    Emprestar e Devolver Equipamento;
+    Emprestar e Devolver e alterar situção do Equipamento;
     Listar Equipamentos(Situação e responsável);
+
+Criar programa para:
+** Cadastrar Pessoas;
+** Cadastrar Equipamentos;
+** Realizar Empréstimo de equipamentos;
+** Realizar Devolução de equipamentos;
+** Listar equipamentos emprestados e com quem está;
+** Listar equipamentos disponíveis para empréstimo;
+** Listar equipamentos em manutenção;
+** Listar equipamentos baixados (para jogar fora);
+Dados da pessoa: CPF, Nome, Whats, e-mail (validar apenas se cpf já existe no sistema)
+Dados do equipamento: Codigo, Descrição, Estado [Novo/Usado/Defeito/Baixado], situação [Disponível/Emprestado/Manutenção]
+No equipamento deve armazenar também:
+* Responsável [Pessoal que tomou equipamento emprestado]
+* Data do empréstimo
+
