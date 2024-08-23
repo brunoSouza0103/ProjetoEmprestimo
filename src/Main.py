@@ -1,24 +1,27 @@
-#Funcionário:
-#   cpf;
-#   nome;
-#   telefone (whats);
-#   email;
+#Equipamento
+# código;
+# descrição;
+# estado(novo, usado, defeito, baixado);
+# situação(disponivel, manutenção, emprestado);
+# responsável;
+# data e hora (se emprestado);
 
-def cadastrarPessoa():
-    pessoas = []
-    print("Cadastrar novo funcionário. \n")
-    cpf = str(input("Cpf: "))
-    nome = str(input("Nome: "))
-    telefone = str(input("Telefone: "))
-    email = str(input("Email: "))
+def cadastrarEquipamento():
+    equipamentos = []
+    print("Cadastrar novo equipamento. \n")
+    cod = str(input("Código: "))
+    desc = str(input("Descrição: "))
+    estado = str(input("Estado (Novo, Usado, Defeito, Baixado): "))
+    situacao = str(input("Situação (Disponivel, Manutenção, Emprestado): "))
+    responsavel = str(input("Responsável: "))
+    dataehora = str(input("Data e hora (Se emprestado): "))
 
-    # Adicionando os dados como uma tupla
-    pessoa = (cpf, nome, telefone, email)
-    pessoas.append(pessoa)
+    equipamento = (cod, desc, estado, situacao, responsavel, dataehora)
+    equipamentos.append(equipamento)
 
-    print(pessoas[0])
+    print(equipamentos[0])
 
-cadastrarPessoa()
+cadastrarEquipamento()
 
 
 
