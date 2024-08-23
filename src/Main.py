@@ -1,30 +1,24 @@
-# Listar equipamentos emprestados e com quem está;
-# Listar equipamentos disponíveis para empréstimo;
-# Listar equipamentos em manutenção;
-# Listar equipamentos baixados (para jogar fora);
+#Funcionário:
+#   cpf;
+#   nome;
+#   telefone (whats);
+#   email;
 
-def listagem(): 
-    print("\n1- Os equipamentos emprestados e com quem está")
-    print("\n2- Os equipamentos disponíveis para empréstimo")
-    print("\n3- Os equipamentos em manutenção")
-    print("\n4- Os equipamentos baixados (para jogar fora)")
-    print("\nO que você deseja ver ?")
-    escolha = int(input())
+def cadastrarPessoa():
+    pessoas = []
+    print("Cadastrar novo funcionário. \n")
+    cpf = str(input("Cpf: "))
+    nome = str(input("Nome: "))
+    telefone = str(input("Telefone: "))
+    email = str(input("Email: "))
 
-    if escolha == 1:
-        emprestados()
-    elif escolha == 2:
-        disponiveis()
-    elif escolha ==3:
-        manutencao()
-    elif escolha==4:
-        baixados()
+    # Adicionando os dados como uma tupla
+    pessoa = (cpf, nome, telefone, email)
+    pessoas.append(pessoa)
+
+    print(pessoas[0])
+
+cadastrarPessoa()
 
 
-def emprestados():
-    
-def disponiveis():
 
-def manutencao():
-
-def baixados():
