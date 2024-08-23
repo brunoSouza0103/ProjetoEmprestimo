@@ -16,7 +16,7 @@ while True:
         status = 'indisponível'
     else:
         print("Status inválido. Por favor, digite 'd' para disponível ou 'i' para indisponível.")
-        continue  # Pular para a próxima iteração do loop sem adicionar a linha
+        continue  
    
     responsavel = input("Digite o nome do responsável (deixe em branco se não houver): ").strip() or None
    
