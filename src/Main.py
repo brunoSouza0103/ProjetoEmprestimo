@@ -1,32 +1,24 @@
-matriz = []
-
-def adicionar_linha(matriz, nome, status='disponível', responsavel=None):
-    matriz.append([nome, status, responsavel])
-
-while True:
-    nome = input("Digite o nome do equipamento (ou 'sair' para encerrar): ").strip()
-   
-    if nome.lower() == 'sair':
-        break
-   
-    entrada = input("Digite o status (d para disponível ou i para indisponível): ").strip().lower()
-    if entrada == 'd':
-        status = 'disponível'
-    elif entrada == 'i':
-        status = 'indisponível'
+def adicionar_equipamento(equipamentos, id, nome, status='disponível'):
+    if id not in equipamentos:
+        equipamentos[id] = {'nome': nome, 'status': status}
+        print(f"Equipamento '{nome}' adicionado ao sistema.")
     else:
-        print("Status inválido. Por favor, digite 'd' para disponível ou 'i' para indisponível.")
-        continue  
-   
-    responsavel = input("Digite o nome do responsável (deixe em branco se não houver): ").strip() or None
-   
-    adicionar_linha(matriz, nome, status, responsavel)
-   
-    print("\nMatriz atual:")
-    for linha in matriz:
-        print(linha)
+        print(f"Equipamento com ID {id} já existe.")
 
-print("\nMatriz final:")
-for linha in matriz:
-    print(linha)
+def devolver_equipamento(equipamentos, id):
+    """Função para devolver um equipamento dado um dicionário de equipamentos e um ID."""
+    if id in equipamentos:
+        equipamento = equipamentos[id]
+        if equipamento['status'] == 'emprestado':
+            equipamento['status'] = 'disponível'
+            print(f"Equipamento '{equipamento['nome']}' devolvido com sucesso.")
+        else:
+            print(f"Equipamento '{equipamento['nome']}' já está disponível.")
+    else:
+        print(f"Equipamento com ID {id} não encontrado.")
+
+def listar_equipamentos(equipamentos):
+    """Função para listar todos os equipamentos e seus status."""
+    for id, info in equipamentos.items():
+        print(f"ID: {id}, Nome: {info['nome']}, Status: {info['status']}")
 
