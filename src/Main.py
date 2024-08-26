@@ -48,7 +48,3 @@ for linha in matriz:
     print(linha)
 
 
-print("\nMatriz final:")
-for linha in matriz:
-    print(linha)
-
