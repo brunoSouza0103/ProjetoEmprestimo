@@ -1,10 +1,3 @@
-def adicionar_equipamento(equipamentos, id, nome, status='disponível'):
-    if id not in equipamentos:
-        equipamentos[id] = {'nome': nome, 'status': status}
-        print(f"Equipamento '{nome}' adicionado ao sistema.")
-    else:
-        print(f"Equipamento com ID {id} já existe.")
-
 def devolver_equipamento(equipamentos, id):
     """Função para devolver um equipamento dado um dicionário de equipamentos e um ID."""
     if id in equipamentos:
