@@ -1,5 +1,5 @@
-def adicionar_linha(matriz, codigo, status='disponível', responsavel=None, situacao='novo'):
-    matriz.append([codigo, status, responsavel, situacao])
+def adicionar_linha(matriz, codigo, descricao, status='disponível', responsavel=None, situacao='novo'):
+    matriz.append([codigo, descricao, status, responsavel, situacao])
 
 matriz = []
 
@@ -8,7 +8,7 @@ while True:
     
     if codigo.lower() == 'sair':
         break
-    
+    descricao = input("Digite a descrição do seu equipamento: ")
     entrada = input("Digite o status do equipamento (d para Disponível, e para Emprestado, m para Manutenção): ").strip().lower()
     
     if entrada == 'd':
@@ -36,8 +36,9 @@ while True:
     else:
         print("Estado inválido. Por favor, digite 'n' para novo, 'u' para usado, 'd' para defeito ou 'b' para baixado.")
         continue
+
     
-    adicionar_linha(matriz, codigo, status, responsavel, situacao)
+    adicionar_linha(matriz, codigo, descricao, status, responsavel, situacao)
     
     print("\nMatriz atual:")
     for linha in matriz:
@@ -46,5 +47,4 @@ while True:
 print("\nMatriz final:")
 for linha in matriz:
     print(linha)
-
 
