@@ -102,7 +102,7 @@ def logicaEmprestimo():
                 print(f"{i} - {linha}")
         
         try:
-            linhae = int(input("Informe a linha do equipamento que deseja emprestar (0,1,2,3...):"))
+            linhae = int(input("Informe a linha do equipamento que deseja emprestar, ou digite 's' para sair (0,1,2,3...):"))
 
             if linhae < 0 or linhae >= len(matriz_equipamentos):
                 print("Esta linha não existe, escolha outra!")
@@ -120,7 +120,7 @@ def logicaEmprestimo():
                 print("Este equipamento está em manutenção, selecione outro!")
                 continue
         except ValueError:
-            print("Entrada inválida. Por favor, insira um número inteiro.")
+            break
             
     print("\nLista de equipamentos atualizada:")
         
