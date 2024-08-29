@@ -101,19 +101,26 @@ def logicaEmprestimo():
             if linha[2] == 'disponível':
                 print(f"{i} - {linha}")
         
-        linhae = int(input("Informe a linha do equipamento que deseja emprestar (0,1,2,3...):"))
-        
-        if matriz_equipamentos[linhae][2] == 'disponível':
-            print("Empréstimo realizado com sucesso!")
-            matriz_equipamentos[linhae][2] = 'emprestado'
-            matriz_equipamentos[linhae][3] = nome
-            break
-        elif matriz_equipamentos[linhae][2] == 'emprestado':
-            print("Este equipamento já está emprestado, selecione outro!")
-            continue
-        else:
-            print("Este equipamento está em manutenção, selecione outro!")
-            continue
+        try:
+            linhae = int(input("Informe a linha do equipamento que deseja emprestar (0,1,2,3...):"))
+
+            if linhae < 0 or linhae >= len(matriz_equipamentos):
+                print("Esta linha não existe, escolha outra!")
+                continue
+
+            if matriz_equipamentos[linhae][2] == 'disponível':
+                print("Empréstimo realizado com sucesso!")
+                matriz_equipamentos[linhae][2] = 'emprestado'
+                matriz_equipamentos[linhae][3] = nome
+                break
+            elif matriz_equipamentos[linhae][2] == 'emprestado':
+                print("Este equipamento já está emprestado, selecione outro!")
+                continue
+            elif matriz_equipamentos[linhae][2] == 'manutenção':
+                print("Este equipamento está em manutenção, selecione outro!")
+                continue
+        except ValueError:
+            print("Entrada inválida. Por favor, insira um número inteiro.")
             
     print("\nLista de equipamentos atualizada:")
         
