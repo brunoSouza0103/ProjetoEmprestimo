@@ -140,29 +140,75 @@ def devolver_equipamento():
     print("Equipamento não encontrado ou não está emprestado.")
 
 def listarEquipamentos():
-    def emprestados(matriz_equipamentos):
+    def emprestados(matriz):
+        encontrou_emprestado = False
+    
         print("\nEquipamentos emprestados e com quem está:")
         for linha in matriz_equipamentos:
-            if linha[2] == 'emprestado':
+            if linha[1] == 'emprestado':                                 #Verifica se esta na situação "emprestado"
                 print(f"Equipamento: {linha[1]}, Código: {linha[0]}, Responsável: {linha[3]}")
+                encontrou_emprestado = True
+        
+        if not encontrou_emprestado:
+            print("Nenhum equipamento está emprestado")
 
-    def disponiveis(matriz_equipamentos):
+    def disponiveis(matriz):
+        encontrou_disponivel = False
+    
         print("\nEquipamentos disponíveis para empréstimo:")
+           
         for linha in matriz_equipamentos:
-            if linha[2] == 'disponível':
+            if linha[2] == 'disponível':                                 #Verifica se esta na situação "disponível"
                 print(f"Equipamento: {linha[1]}, Código: {linha[0]}")
+                encontrou_disponivel = True
+        
+        if not encontrou_disponivel: #se n encontrar disponivel da o print
+            print("Nenhum equipamento está disponivel.")
 
     def manutencao(matriz_equipamentos):
+        encontrou_manutencao = False
+        
         print("\nEquipamentos em manutenção:")
+            
         for linha in matriz_equipamentos:
             if linha[2] == 'manutenção':
                 print(f"Equipamento: {linha[1]}, Código: {linha[0]}")
+                encontrou_manutencao = True
+        
+        if not encontrou_manutencao: #se n encontrar manutencao da o print
+            print("Nenhum equipamento está em manutenção.")
 
-    def baixados(matriz_equipamentos):
+    def baixados(matriz):
+        equipamento_baixado = False
+    
         print("\nEquipamentos baixados (para jogar fora):")
-        for linha in matriz_equipamentos:
-            if linha[4] == 'baixado':
+        for linha in matriz:
+            if linha[3] == 'baixado':                                    #Verifica se esta com o status "baixado"
                 print(f"Equipamento: {linha[1]}, Código: {linha[0]}")
+                equipamento_baixado = True
+        
+        if not equipamento_baixado:
+            print("Nanhum equipamento foi baixado")
+
+def listagem(matriz):                                                   
+    print("\n1- Os equipamentos emprestados e com quem está")
+    print("2- Os equipamentos disponíveis para empréstimo")
+    print("3- Os equipamentos em manutenção")
+    print("4- Os equipamentos baixados (para jogar fora)")
+    print("\nO que você deseja ver? (Digite o número da opção)")
+   
+    escolha = int(input())
+
+    if escolha == 1:
+        emprestados(matriz)
+    elif escolha == 2:
+        disponiveis(matriz)
+    elif escolha == 3:
+        manutencao(matriz)
+    elif escolha == 4:
+        baixados(matriz)
+    else:
+        print("Opção inválida. Por favor, digite um número de 1 a 4.")
 
     def listagem(matriz_equipamentos):
         print("\n1- Equipamentos emprestados e com quem está")
