@@ -192,7 +192,7 @@ def listarEquipamentos():
         print("4- Equipamentos baixados")
         print("\nO que você deseja ver? (Digite o número da opção)")
     
-        escolha = input()
+        escolha = input().strip
 
         if escolha == '1':
             emprestados(matriz_equipamentos)
@@ -211,7 +211,7 @@ def Main():
     menu = 1
     while menu != 0:
         print("\nEscolha o que você deseja fazer\n 1. Cadastrar Funcionário\n 2. Cadastrar Equipamento\n 3. Emprestar Equipamento\n 4. Devolver Equipamento\n 5. Listar Equipamentos\n 0. Sair")
-        menu = input("Digite uma opção: ")
+        menu = input("Digite uma opção: ").strip
 
         if menu == '1':
             adicionarPessoa()
