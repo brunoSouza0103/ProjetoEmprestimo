@@ -140,7 +140,7 @@ def listarEquipamentos():
     
         print("\nEquipamentos emprestados e com quem está:")
         for linha in matriz_equipamentos:
-            if linha[1] == 'emprestado':                                 #Verifica se esta na situação "emprestado"
+            if linha[2] == 'emprestado':                                 #Verifica se esta na situação "emprestado"
                 print(f"Equipamento: {linha[1]}, Código: {linha[0]}, Responsável: {linha[3]}")
                 encontrou_emprestado = True
         
