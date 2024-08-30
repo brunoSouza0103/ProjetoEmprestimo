@@ -122,11 +122,6 @@ def logicaEmprestimo():
         except ValueError:
             break
             
-    print("\nLista de equipamentos atualizada:")
-        
-    for linha in matriz_equipamentos:
-        print(linha)
-
 def devolver_equipamento():
     print("Devolver Equipamento\n")
     codigo = input("Digite o código do equipamento a ser devolvido: ")
