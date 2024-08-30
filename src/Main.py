@@ -211,7 +211,7 @@ def Main():
     menu = 1
     while menu != 0:
         print("\nEscolha o que você deseja fazer\n 1. Cadastrar Funcionário\n 2. Cadastrar Equipamento\n 3. Emprestar Equipamento\n 4. Devolver Equipamento\n 5. Listar Equipamentos\n 0. Sair")
-        menu = int(input("Digite uma opção: "))
+        menu = input("Digite uma opção: ")
 
         if menu == 1:
             adicionarPessoa()
