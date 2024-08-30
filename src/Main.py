@@ -223,7 +223,9 @@ def Main():
             devolver_equipamento()
         elif menu == 5:
             listarEquipamentos()
-        else:
+        elif menu == 0:
             print("Saindo...")
+        else:
+            print("\nO que você digitou está errado, digite um dos numeros pedidos")
 
 Main()
