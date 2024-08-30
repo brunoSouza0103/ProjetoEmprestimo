@@ -188,7 +188,7 @@ def listarEquipamentos():
                 equipamento_baixado = True
         
         if not equipamento_baixado:
-            print("Nanhum equipamento foi baixado")
+            print("Nenhum equipamento foi baixado")
 
     def listagem(matriz_equipamentos):
         print("\n1- Equipamentos emprestados e com quem está")
