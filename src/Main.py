@@ -213,17 +213,17 @@ def Main():
         print("\nEscolha o que você deseja fazer\n 1. Cadastrar Funcionário\n 2. Cadastrar Equipamento\n 3. Emprestar Equipamento\n 4. Devolver Equipamento\n 5. Listar Equipamentos\n 0. Sair")
         menu = input("Digite uma opção: ")
 
-        if menu == 1:
+        if menu == '1':
             adicionarPessoa()
-        elif menu == 2:
+        elif menu == '2':
             cadastrarEquipamento()
-        elif menu == 3:
+        elif menu == '3':
             logicaEmprestimo()
-        elif menu == 4:
+        elif menu == '4':
             devolver_equipamento()
-        elif menu == 5:
+        elif menu == '5':
             listarEquipamentos()
-        elif menu == 0:
+        elif menu == '0':
             print("Saindo...")
         else:
             print("\nO que você digitou está errado, digite um dos numeros pedidos")
