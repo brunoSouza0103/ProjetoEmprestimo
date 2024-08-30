@@ -192,19 +192,19 @@ def listarEquipamentos():
         print("4- Equipamentos baixados")
         print("\nO que você deseja ver? (Digite o número da opção)")
     
-        escolha = int(input())
+        escolha = input()
 
-        if escolha == 1:
+        if escolha == '1':
             emprestados(matriz_equipamentos)
-        elif escolha == 2:
+        elif escolha == '2':
             disponiveis(matriz_equipamentos)
-        elif escolha == 3:
+        elif escolha == '3':
             manutencao(matriz_equipamentos)
-        elif escolha == 4:
+        elif escolha == '4':
             baixados(matriz_equipamentos)
         else:
             print("Opção inválida. Por favor, digite um número de 1 a 4.")
-
+            listagem(matriz_equipamentos)
     listagem(matriz_equipamentos)
 
 def Main():
